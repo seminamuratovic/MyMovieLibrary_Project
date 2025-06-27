@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Implementacija.Models.Obavijest>
+
+@{
+    ViewData["Title"] = "Notifications";
+
+}
+
+<style>
+    body {
+        background-image: url('https://i.ibb.co/dGmJRcn/Pocetna-Stranica.png');
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    div.transbox {
+        margin: 30px;
+        background-color: #ffffff;
+        border: 1px solid black;
+        opacity: 0.6;
+    }
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 20px;
+    }
+</style>
+
+
+
+
+<div class="container">
+    <div class="transbox">
+        <div class="col-md-11 p-lg-4 mx-auto my-4">
+            <h1 class="display-4 font-weight-normal">
+                <img style="max-width:65px; height:45px; margin-top: -7px;"
+                     src="~/lib/images/notifications.png"><b>Notifications</b>
+            </h1> <br />
+            <p class="lead font-weight-normal"></p>
+            <br />
+
+            <p class="lead font-weight-bold">
+                Comments <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            <p class="lead font-weight-light">Let me know if anyone responds to the comment</p>
+            <br />
+            <!--This is the list of comment Notifications-->
+                @foreach (var item in Model)
+                {
+                    
+                
+             <div style="margin-bottom:5px" class="card">
+            <div class="row">
+                <div class="col-10">
+                        <div class="comment-area"> 
+                            <p style="font-weight:bold">@item.Tekst</p>
+                        </div>
+                </div>
+            </div>
+        </div>
+                }
+            <!---->
+            <p class="lead font-weight-bold">Update app <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            <p class="lead font-weight-light">Notify me via email about changes to the app</p>
+            <br />
+
+
+        </div>
+    </div>
+</div>
